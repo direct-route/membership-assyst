@@ -33,6 +33,5 @@
 		"pocketbase": "^0.27.0",
 		"postmark": "^5.1.0"
 	},
-	"packageManager": "pnpm@10.13.1",
-
+	"packageManager": "pnpm@10.13.1"
 }
