@@ -36,20 +36,20 @@
 			}}>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 					<div>
-						<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Contact Name *</label>
-						<input name="name" type="text" required class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a]" />
+						<label for="new-name" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Contact Name *</label>
+						<input id="new-name" name="name" type="text" required class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a]" />
 					</div>
 					<div>
-						<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Company Name</label>
-						<input name="licensee_name" type="text" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a]" />
+						<label for="new-licensee-name" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Company Name</label>
+						<input id="new-licensee-name" name="licensee_name" type="text" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a]" />
 					</div>
 					<div>
-						<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Email *</label>
-						<input name="email" type="email" required class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a]" />
+						<label for="new-email" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Email *</label>
+						<input id="new-email" name="email" type="email" required class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a]" />
 					</div>
 					<div>
-						<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Password *</label>
-						<input name="password" type="password" required minlength="8" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a]" />
+						<label for="new-password" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Password *</label>
+						<input id="new-password" name="password" type="password" required minlength="8" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a]" />
 					</div>
 				</div>
 				<div class="flex items-center gap-3 mt-4">
