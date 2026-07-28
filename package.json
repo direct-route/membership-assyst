@@ -1,0 +1,37 @@
+{
+	"name": "membership-assyst",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"setup": "node scripts/setup-pocketbase.js"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^7.0.1",
+		"@sveltejs/adapter-node": "^5.5.7",
+		"@sveltejs/kit": "^2.63.0",
+		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"@tailwindcss/vite": "^4.3.3",
+		"autoprefixer": "^10.5.4",
+		"postcss": "^8.5.23",
+		"svelte": "^5.56.1",
+		"tailwindcss": "^4.3.3",
+		"vite": "^8.0.16",
+		"vite-plugin-svelte-inspector": "^0.2.1"
+	},
+	"dependencies": {
+		"@tiptap/core": "^3.29.1",
+		"@tiptap/extension-link": "^3.29.1",
+		"@tiptap/extension-placeholder": "^3.29.1",
+		"@tiptap/pm": "^3.29.1",
+		"@tiptap/starter-kit": "^3.29.1",
+		"mysql2": "^3.23.2",
+		"pocketbase": "^0.27.0",
+		"postmark": "^5.1.0"
+	},
+	"packageManager": "pnpm@10.13.1"
+}

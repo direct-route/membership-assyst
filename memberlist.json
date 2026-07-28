@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "membershipTypeName": "Platinum Club Monthly",
+    "membershipDescription": "The Direct Route flagship service offered to suitably qualified clients by invitation only. This is zero cost debt recovery on debts of all values, inclusive of court issue and standard enforcement fees should legal action be required (subject to terms). This means risk free debt collection for you.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "For the Attention of - [[ApplicantName]] \n\nRe: Invitation to Join Platinum Club - [[ApplicantCompany]] \n\nWe write further to our recent conversation concerning our debt collection services...(full invitation text with bank details Sort Code 12 24 81, Account 06368001, £30/month subscription)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Platinum Club Membership has been approved...(zero cost debt collection, no limit on debt value)",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/f008e4127b9803bbdbd93038b9cb0217.doc"
+  },
+  {
+    "id": 2,
+    "membershipTypeName": "Platinum Club Annual",
+    "membershipDescription": "The Direct Route flagship service offered to suitably qualified clients by invitation only. Zero cost debt recovery on debts of all values, inclusive of court issue and standard enforcement fees.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "For the Attention of: [[ApplicantName]] \n\nRe: Your Invitation to Join Platinum Club - [[ApplicantCompany]]...(annual membership, partial invoice note for late December)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Annual Platinum Club Membership has been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/6b59451466a7b1fdb24dd47fef778857.doc"
+  },
+  {
+    "id": 3,
+    "membershipTypeName": "Fairway Gold 200",
+    "membershipDescription": "The most popular Direct Route service. Zero cost debt collection on debts up to £3,000, 2% + Vat commission on greater value, no collect no fee.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to become a Fairway Gold Member...(£240 lifetime membership fee, bank details, AccountAssyst free benefit)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership has been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/b45b65581280b315a60081f411141c1d.docx"
+  },
+  {
+    "id": 4,
+    "membershipTypeName": "",
+    "membershipDescription": "",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "",
+    "acceptanceText": "",
+    "termsConditionsFile": ""
+  },
+  {
+    "id": 5,
+    "membershipTypeName": "Fairway Gold Comp",
+    "membershipDescription": "The most popular Direct Route service. Zero cost debt collection on debts up to £3,000, 2% + Vat commission on greater value.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to become a Fairway Gold Member...(complimentary membership courtesy of business partner)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership has now been approved (usual value £200.00 + Vat)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/42cfb4066a233d4f38eeed55c6ba5563.docx"
+  },
+  {
+    "id": 6,
+    "membershipTypeName": "Fairway Silver 200",
+    "membershipDescription": "The original Direct Route zero cost debt collection service. Zero cost debt collection up to £3,000, 2% + Vat commission on greater value.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to become a Fairway Silver Member...(£240 lifetime membership fee)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Silver Membership has been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/f5efe5cd55b14210dcc216edd20f38f1.docx"
+  },
+  {
+    "id": 7,
+    "membershipTypeName": "Fairway Silver Comp",
+    "membershipDescription": "The original Direct Route zero cost debt collection service.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to become a Fairway Silver Member...(complimentary courtesy of business partner)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Silver Membership has been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/51caaa7007b6ba5ffeac0346a2e22b37.docx"
+  },
+  {
+    "id": 8,
+    "membershipTypeName": "Bronze 10%",
+    "membershipDescription": "For clients with modest or once-off debt collection needs. 10% + Vat commission upon successful recovery, no collect no fee.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to become a Bronze Member...(15% + Vat commission, £240 lifetime membership fee option)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Direct Route Bronze Membership has been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/9f35fbc804c5a98999246b37d2b37009.docx"
+  },
+  {
+    "id": 9,
+    "membershipTypeName": "Gold",
+    "membershipDescription": "Gold description",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nThank you for requesting a credit account with this company...",
+    "acceptanceText": "",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/35f8ca12a8ac21ad3634b733996bdfd1.doc"
+  },
+  {
+    "id": 10,
+    "membershipTypeName": "",
+    "membershipDescription": "",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "",
+    "acceptanceText": "",
+    "termsConditionsFile": ""
+  },
+  {
+    "id": 11,
+    "membershipTypeName": "BPMA Credit Management Package",
+    "membershipDescription": "BPMA Members receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, 2% commission above, plus 600 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your BPMA Zero Cost Debt Collection Service...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership has now been approved...(includes PS about AccountAssyst 600 units)",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/227a23c6d51cab578da3f43ab0518a02.docx"
+  },
+  {
+    "id": 12,
+    "membershipTypeName": "DLA Credit Management Package",
+    "membershipDescription": "DLA Members receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, 2% commission above, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your DLA Zero Cost Debt Collection Service...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership has now been approved (courtesy of DLA Membership)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/7051f85f13b92a792b8b63d0c7cf13e1.docx"
+  },
+  {
+    "id": 13,
+    "membershipTypeName": "IPIA Credit Management",
+    "membershipDescription": "IPIA Members receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, 2% commission above, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your IPIA Zero Cost Debt Collection Service...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership has now been approved (courtesy of IPIA Membership)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/9bdac7f93109a9884defbcea0fd51589.docx"
+  },
+  {
+    "id": 14,
+    "membershipTypeName": "West & North Yorkshire Chamber of Commerce",
+    "membershipDescription": "Members receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, 2% commission above, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your West & North Yorkshire Chamber Zero Cost Debt Collection Service...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership has now been approved (courtesy of WNY Chamber)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/e65526b1c45ea25f533389f7e7b2d414.docx"
+  },
+  {
+    "id": 15,
+    "membershipTypeName": "Index Courier Network",
+    "membershipDescription": "Members receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, 2% commission above, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your Index Courier Network Zero Cost Debt Collection Service...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership has now been approved (courtesy of Index Courier Network)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/f382368d5945c902ecd4b1f44cf696d8.docx"
+  },
+  {
+    "id": 16,
+    "membershipTypeName": "",
+    "membershipDescription": "",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "",
+    "acceptanceText": "",
+    "termsConditionsFile": ""
+  },
+  {
+    "id": 17,
+    "membershipTypeName": "London Southside Chamber of Commerce",
+    "membershipDescription": "Members receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, 2% commission above, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your London Southside Chamber Zero Cost Debt Collection Service...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership with Direct Route Collections has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/a7b2d55e48e89935b0f4a4e4254d60a2.docx"
+  },
+  {
+    "id": 18,
+    "membershipTypeName": "Sutton United Business Club",
+    "membershipDescription": "Sutton United Business Club Members and Community Affiliates receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your Sutton United Community Affiliated Businesses Zero Cost Debt Collection Service...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership with Direct Route Collections has now been approved (courtesy of Sutton United)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/eb98f8769859a7bd463203b80797fd0e.docx"
+  },
+  {
+    "id": 19,
+    "membershipTypeName": "Pera Business Park",
+    "membershipDescription": "Tenants of Pera Business Park receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your Pera Business Park Credit Management Package...(contact Ken Brown, Leicestershire consultant)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership has now been approved (courtesy of Pera Business Park)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/f6bc9749018625066807acb964915c67.docx"
+  },
+  {
+    "id": 20,
+    "membershipTypeName": "Mamhilad Park Estate",
+    "membershipDescription": "Tenants of Mamhilad Park Estate receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your Mamhilad Park Estate Park Credit Management Package...(contact Ron Dingle, Cardiff consultant)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership has now been approved (courtesy of Mamhilad Park Estate)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/a467a3a4b8a860c9d368f5635512f411.docx"
+  },
+  {
+    "id": 21,
+    "membershipTypeName": "Wandsworth Chamber of Commerce",
+    "membershipDescription": "Members receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your Wandsworth Chamber Zero Cost Debt Collection Service...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership with Direct Route Collections has now been approved (courtesy of Wandsworth Chamber)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/17b44d45f946135af686464b09487e0c.docx"
+  },
+  {
+    "id": 22,
+    "membershipTypeName": "Branded Content Marketing Association",
+    "membershipDescription": "BCMA Members receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your Branded Content Marketing Association Zero Cost Debt Collection Service...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership with Direct Route Collections has now been approved (courtesy of BCMA)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/e68adcc3d401764b644f5eb9f7518e87.docx"
+  },
+  {
+    "id": 23,
+    "membershipTypeName": "Benefits Direct",
+    "membershipDescription": "Members of Benefits Direct receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your Benefits Direct Zero Cost B2B Debt Collection Service...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership with Direct Route Collections has now been approved (courtesy of Benefits Direct)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/6588a3884712f13d209f801517bfb400.docx"
+  },
+  {
+    "id": 24,
+    "membershipTypeName": "Prompt Payer",
+    "membershipDescription": "Members of Prompt Payer receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your Prompt Payer Zero Cost B2B Debt Collection Service...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership with Direct Route Collections has now been approved (courtesy of Prompt Payer)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/7a54d15aa6e79799fefeb1047fd6cc3a.docx"
+  },
+  {
+    "id": 25,
+    "membershipTypeName": "Fairway Gold Trial",
+    "membershipDescription": "Used when a significantly sized prospect is wishing to trial the Fairway Gold service to evaluate the collection performance and process.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to your recent conversations regarding a trial of Direct Route debt collection services...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership trial has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/77cbd28ef2586e1ece128fc2f0848144.docx"
+  },
+  {
+    "id": 26,
+    "membershipTypeName": "BMF Builders Merchants Federation",
+    "membershipDescription": "BMF Members receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, plus free credit assessment of existing customers (up to £2500 value), plus 100 free start up units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to your recent conversations regarding a trial and free credit assessment...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership has now been approved and eligible for free credit assessment (BMF Membership)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/78519fd6c269062c38c274b14fac17a6.docx"
+  },
+  {
+    "id": 27,
+    "membershipTypeName": "BPIF Fairway Gold Trial",
+    "membershipDescription": "BPIF Members receive a complimentary lifetime membership to Fairway Gold worth £200 + Vat, used for trial evaluation.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to your recent conversations regarding a trial...(BPIF Membership benefit)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership trial, courtesy of the BPIF, has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/07e2d6a24a1cc48b14b31393e748c7d4.docx"
+  },
+  {
+    "id": 28,
+    "membershipTypeName": "Kall Kwik Fairway Gold Trial",
+    "membershipDescription": "Kall Kwik Franchisees receive a complimentary lifetime membership to Fairway Gold worth £200 + Vat, used for trial evaluation.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to your recent conversations regarding a trial...(Kall Kwik Franchisee benefit)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership trial, courtesy of Kall Kwik Head Office, has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/dd1b2f9d50a2d9a3573da704ad50b922.docx"
+  },
+  {
+    "id": 29,
+    "membershipTypeName": "Recognition Express Fairway Gold Trial",
+    "membershipDescription": "Recognition Express Franchisees receive a complimentary lifetime membership to Fairway Gold worth £200 + Vat, used for trial evaluation.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to your recent conversations regarding a trial...(Recognition Express Franchisee benefit)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership trial, courtesy of Recognition Express Head Office, has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/60ad69a456242c590c31fb6fa7c96f88.docx"
+  },
+  {
+    "id": 30,
+    "membershipTypeName": "",
+    "membershipDescription": "",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "",
+    "acceptanceText": "",
+    "termsConditionsFile": ""
+  },
+  {
+    "id": 31,
+    "membershipTypeName": "Clean Up System",
+    "membershipDescription": "Clients introduced by Clean Up System receive complimentary Direct Route membership plus zero cost debt recovery up to £3,000, plus 100 complimentary AccountAssyst units.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Dear [[ApplicantName]] \n\nRe: Invitation to activate your Clean Up System Zero Cost Debt Collection benefit...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your complimentary Fairway Gold Membership with Direct Route Collections has now been approved (courtesy of Clean Up System)...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/498e3be13438c960e5c69a27afba9dbe.docx"
+  },
+  {
+    "id": 32,
+    "membershipTypeName": "Fairway Gold Trial (DMM)",
+    "membershipDescription": "Clients via the DRC website. DMM refers to Digital Marketing Media, SEO partner with a 10% commission agreement for reduced SEO fees.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to our recent communications regarding a trial...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership trial has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/ba417511847ad1da2e855dabe9dc3fc1.docx"
+  },
+    {
+    "id": 33,
+    "membershipTypeName": "Fairway Gold Trial (Smart)",
+    "membershipDescription": "Clients generated through strategic partnership with LinkedIn partner Smart Connecting Ltd, entitled to 10% commission on introduced incomes.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to your recent conversations regarding a trial of Direct Route debt collection services...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership trial has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/9a5ab38b11dd78c333dbd97b43467a00.docx"
+  },
+  {
+    "id": 34,
+    "membershipTypeName": "National Buying Consortium",
+    "membershipDescription": "NBO Members and Suppliers receive a complimentary lifetime membership to Fairway Gold worth £200 + Vat, used for trial evaluation.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to your recent conversations regarding a trial...(National Buying Consortium benefit)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership trial, courtesy of the National Buying Consortium, has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/9504fa7d35b3f0f3357266d9fd3e934f.docx"
+  },
+  {
+    "id": 35,
+    "membershipTypeName": "Sameday Courier Network",
+    "membershipDescription": "Sameday Courier Network Members and Suppliers receive a complimentary lifetime membership to Fairway Gold worth £200 + Vat, used for trial evaluation.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to your recent conversations regarding a trial...(Sameday Courier Network benefit)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership trial, courtesy of the Sameday Courier Network, has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/177dad7f0f58b78657624ad0d7d90aa9.docx"
+  },
+  {
+    "id": 36,
+    "membershipTypeName": "Whitehill Partnership LLP",
+    "membershipDescription": "Clients introduced by Whitehill Business Services receive a complimentary lifetime membership to Fairway Gold worth £200 + Vat, used for trial evaluation.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to your recent conversations regarding a trial...(introduced by Whitehill Business Services)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership trial, courtesy of Whitehill Business Services, has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/1cccae8ac1317a6e39e25c3eb486ada3.docx"
+  },
+  {
+    "id": 37,
+    "membershipTypeName": "Prevail Accountancy Ltd",
+    "membershipDescription": "Clients introduced by Prevail Accountancy Ltd receive a complimentary lifetime membership to Fairway Gold worth £200 + Vat, used for trial evaluation.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to your recent conversations regarding a trial...(introduced by Prevail Accountancy Ltd)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership trial, courtesy of Prevail Accountancy Ltd, has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/e349421ba0104a1b783719818e14f4e7.docx"
+  },
+  {
+    "id": 38,
+    "membershipTypeName": "John Fairbrother Associates Ltd",
+    "membershipDescription": "Clients introduced by John Fairbrother Associates Ltd receive a complimentary lifetime membership to Fairway Gold worth £200 + Vat, used for trial evaluation.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to your recent conversations regarding a trial...(introduced by John Fairbrother Associates Ltd)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership trial, courtesy of John Fairbrother Associates Ltd, has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/e761c9552afa76d55847a65f3ed0d824.docx"
+  },
+  {
+    "id": 39,
+    "membershipTypeName": "h&b Buying Group LLP",
+    "membershipDescription": "Clients introduced by h&b Buying Group LLP receive a complimentary lifetime membership to Fairway Gold worth £200 + Vat and a debt collection rebate of 10%, used for trial evaluation.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to your recent conversations regarding a trial...(10% bonus rebate via Partners Portal)",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to advise that your Fairway Gold Membership trial, courtesy of h&b Buying Group LLP, has now been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/4f250129ae9f673514f310c15fc1d536.docx"
+  },
+  {
+    "id": 40,
+    "membershipTypeName": "Fairway Gold Trial (Office)",
+    "membershipDescription": "Clients joining through this process obtained through sales generated by the Office Team, entitled to a 10% commission on fees generated.",
+    "currentImage": "https://www.accountassyst.com/membership/images/logo.gif",
+    "mailText": "Company: [[ApplicantCompany]] \n\nFAO [[ApplicantName]] \n\nFurther to our recent discussions regarding a potential trial of Direct Route Debt Collection Services...",
+    "acceptanceText": "Dear [[ApplicantName]] \n\nWe are pleased to confirm that your Fairway Gold Membership Trial has been approved...",
+    "termsConditionsFile": "https://www.accountassyst.com/uploaded_docs/tncs/5704a0faa6cea38317ed43de1d191126.pdf"
+  }
+]

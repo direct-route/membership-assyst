@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm package-lock.json)",
+      "Bash(pnpm pkg *)",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Lee\\\\Desktop\\\\NEW PROJECTS\\\\membership-assyst\\\\src\\\\routes\\\\\\(dashboard\\)\\\\membership-types\\\\[id]\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Lee\\Desktop\\NEW PROJECTS\\membership-assyst\\src\\routes\\(dashboard)\\membership-types"
+    ]
+  }
+}
