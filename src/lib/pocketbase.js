@@ -2,13 +2,6 @@ import PocketBase from 'pocketbase'
 import { PUBLIC_POCKETBASE_URL } from '$env/static/public';
 import { PB_ADMIN_EMAIL, PB_ADMIN_PASSWORD } from '$env/static/private';
 
-// Ensure file URLs always use HTTPS (env var may be http for local PB but prod needs https)
-export const PB_URL = PUBLIC_POCKETBASE_URL;
-export function pbFileUrl(collection, recordId, filename) {
-	const base = PUBLIC_POCKETBASE_URL.replace(/^http:\/\/(?!localhost)/, 'https://');
-	return `${base}/api/files/${collection}/${recordId}/${filename}`;
-}
-
 export const pb = new PocketBase(PUBLIC_POCKETBASE_URL);
 pb.autoCancellation(false);
 

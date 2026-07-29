@@ -1,6 +1,6 @@
 <script>
 	import { enhance } from '$app/forms';
-	import { pbFileUrl } from '$lib/pocketbase.js';
+	import { pbFileUrl } from '$lib/pbUtils.js';
 	let { data } = $props();
 	let app = $derived(data.application);
 	let membershipType = $derived(app.expand?.membership_type_id);

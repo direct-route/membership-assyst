@@ -1,6 +1,6 @@
 <script>
 	import { enhance } from '$app/forms';
-	import { pbFileUrl } from '$lib/pocketbase.js';
+	import { pbFileUrl } from '$lib/pbUtils.js';
 
 	let { data } = $props();
 	let { applications, role, debtPartners, licensees } = $derived.by(() => data);
