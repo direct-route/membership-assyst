@@ -63,6 +63,7 @@ export const actions = {
 		const debtPartners1Id = data.get('debt_partners1_id')?.toString() || '3';
 		const debtPartners2Id = data.get('debt_partners2_id')?.toString() || '3';
 		const insightLicenseeId = data.get('insight_licensee_id')?.toString() || null;
+		const debtPlanId = data.get('debt_plan_id')?.toString() || null;
 
 		const adminPb = await getAdminPb();
 
@@ -76,8 +77,8 @@ export const actions = {
 		let insight2Id = null;
 		try {
 			const result = await insightQuery(
-				`INSERT INTO customers (company, name, email_address, telephone, address, company_reg_no, membership_type, terms, client_legal_entity, debt_partners_id, debt_partners2_id, licensee_id, created_at)
-				 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())`,
+				`INSERT INTO customers (company, name, email_address, telephone, address, company_reg_no, membership_type, terms, client_legal_entity, debt_partners_id, debt_partners2_id, licensee_id, debt_plan_id, created_at)
+				 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())`,
 				[
 					app.company_name || '',
 					app.contact_name || '',
@@ -90,7 +91,8 @@ export const actions = {
 					clientLegalEntity,
 					debtPartners1Id || '3',
 					debtPartners2Id || '3',
-					insightLicenseeId || null
+					insightLicenseeId || null,
+					debtPlanId || null
 				]
 			);
 			insight2Id = result?.data?.insertId?.toString() ?? null;

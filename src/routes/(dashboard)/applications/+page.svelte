@@ -16,11 +16,23 @@
 		{ value: 'Unknown', label: 'Unknown' },
 	];
 
+	const MEMBERSHIP_LEVELS = [
+		{ value: '', label: '— Select —' },
+		{ value: '1', label: 'Bronze Service' },
+		{ value: '2', label: 'Fairway Silver' },
+		{ value: '3', label: 'Fairway Gold' },
+		{ value: '4', label: 'Platinum Club' },
+		{ value: '5', label: 'AccountAssyst Only' },
+		{ value: '6', label: 'Ruby (25% RRC)' },
+		{ value: '7', label: 'AccountAssyst 2' },
+	];
+
 	// Approve modal Insight-2 fields (pre-filled from membership type defaults)
 	let approveClientLegalEntity = $state('');
 	let approveDebtPartners1Id = $state('3');
 	let approveDebtPartners2Id = $state('3');
 	let approveLicenseeId = $state('');
+	let approveDebtPlanId = $state('');
 
 	function openApproveWithDefaults(e, app) {
 		e.stopPropagation();
@@ -29,6 +41,7 @@
 		approveDebtPartners1Id = mt?.insight_debt_partners_id || '3';
 		approveDebtPartners2Id = '3';
 		approveLicenseeId = String(app.expand?.licensee_id?.insight_licensee_id || '');
+		approveDebtPlanId = mt?.insight_debt_plan_id || '';
 		modal = { type: 'approve', app };
 	}
 
@@ -476,13 +489,25 @@
 							</div>
 
 							<div>
-								<label for="approve-legal-entity" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Client Legal Entity</label>
-								<select id="approve-legal-entity" name="client_legal_entity" bind:value={approveClientLegalEntity}
-									class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white">
+								<label for="approve-membership-level" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Membership Level *</label>
+								<select id="approve-membership-level" name="debt_plan_id" bind:value={approveDebtPlanId} required
+									class="w-full px-3 py-2 rounded-lg border {!approveDebtPlanId ? 'border-amber-400 bg-amber-50/40' : 'border-slate-200'} text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white">
+									{#each MEMBERSHIP_LEVELS as l}
+										<option value={l.value}>{l.label}</option>
+									{/each}
+								</select>
+								{#if !approveDebtPlanId}<p class="text-[11px] text-amber-600 mt-0.5">Required — select a membership level</p>{/if}
+							</div>
+
+							<div>
+								<label for="approve-legal-entity" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Client Legal Entity *</label>
+								<select id="approve-legal-entity" name="client_legal_entity" bind:value={approveClientLegalEntity} required
+									class="w-full px-3 py-2 rounded-lg border {!approveClientLegalEntity ? 'border-amber-400 bg-amber-50/40' : 'border-slate-200'} text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white">
 									{#each CLIENT_LEGAL_ENTITIES as e}
 										<option value={e.value}>{e.label}</option>
 									{/each}
 								</select>
+								{#if !approveClientLegalEntity}<p class="text-[11px] text-amber-600 mt-0.5">Required — select a legal entity</p>{/if}
 							</div>
 
 							<div class="grid grid-cols-2 gap-3">
