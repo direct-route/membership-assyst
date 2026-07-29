@@ -74,25 +74,66 @@ export const actions = {
 			return fail(404, { error: 'Application not found' });
 		}
 
+		// Map payment terms string to Insight-2 int
+		const TERMS_MAP = {
+			'30 Days Strict': '1', 'COD': '2', '7 Days': '3',
+			'14 Days': '4', '30 Days': '1', '60 Days': '5', '90 Days': '5'
+		};
+		const termsInt = TERMS_MAP[app.terms_payment] || '1';
+
+		// Map client legal entity string to Insight-2 int
+		const ENTITY_MAP = {
+			'Limited Company': '1', 'Sole Trader': '2', 'Partnership': '3',
+			'LLP': '4', 'Other': '5', 'Insolvency Partner': '6', 'Unknown': '7'
+		};
+		const clientEntityInt = ENTITY_MAP[clientLegalEntity] || null;
+
+		// Split contact name into first/surname
+		const nameParts = (app.contact_name || '').trim().split(' ');
+		const firstName = nameParts[0] || '';
+		const surname = nameParts.slice(1).join(' ') || '';
+
 		let insight2Id = null;
 		try {
 			const result = await insightQuery(
-				`INSERT INTO customers (company, name, email_address, telephone, address, company_reg_no, membership_type, terms, client_legal_entity, debt_partners_id, debt_partners2_id, licensee_id, debt_plan_id, created_at)
-				 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())`,
+				`INSERT INTO customers (
+					company, name, surname, email_address, telephone_number,
+					trading_address, registered_address,
+					company_number, vat_number,
+					terms, client_entity,
+					debt_partners1_id, debt_partners2_id,
+					licensee_id, debt_plan_id,
+					account_contact_name, account_contact_email,
+					business_bankers, bank_address, banked_with,
+					sort_code, account_number,
+					position_title, recommended_by,
+					created_at
+				) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())`,
 				[
 					app.company_name || '',
-					app.contact_name || '',
+					firstName,
+					surname,
 					app.email || '',
 					app.telephone || '',
 					app.trading_address || '',
+					app.registered_address || '',
 					app.company_reg_no || '',
-					app.expand?.membership_type_id?.name || '',
-					app.terms_payment || '30 Days Strict',
-					clientLegalEntity,
-					debtPartners1Id || '3',
-					debtPartners2Id || '3',
+					app.vat_reg_no || '',
+					termsInt,
+					clientEntityInt,
+					debtPartners1Id !== '3' ? debtPartners1Id : null,
+					debtPartners2Id !== '3' ? debtPartners2Id : null,
 					insightLicenseeId || null,
-					debtPlanId || null
+					debtPlanId || null,
+					app.accounts_contact_name || '',
+					app.accounts_email || '',
+					app.bank_name || '',
+					app.bank_address || '',
+					app.bank_how_long || '',
+					app.sort_code || '',
+					app.account_number || '',
+					app.contact_position || '',
+					app.who_recommended || ''
 				]
 			);
 			insight2Id = result?.data?.insertId?.toString() ?? null;
