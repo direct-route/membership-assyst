@@ -30,11 +30,22 @@
 		searching = false;
 	}
 
+	const CREDITSAFE_TYPE_MAP = {
+		'Ltd': 'limited',
+		'PLC': 'plc',
+		'LLP': 'llp',
+		'NonLtd': 'sole_trader',
+		'Partnership': 'partnership',
+	};
+
 	function selectCompany(c) {
 		selectedCompany = c;
 		form.company_name = c.name;
 		form.company_reg_no = c.regNo ?? '';
 		form.trading_address = c.address ?? '';
+		if (c.type && CREDITSAFE_TYPE_MAP[c.type]) {
+			form.company_type = CREDITSAFE_TYPE_MAP[c.type];
+		}
 		searchResults = [];
 		companySearch = c.name;
 	}
