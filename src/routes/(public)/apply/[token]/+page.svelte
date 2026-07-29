@@ -259,8 +259,8 @@
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 							<!-- Company Type dropdown -->
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Company Type *</label>
-								<select bind:value={form.company_type} class={fieldCls('company_type')}>
+								<label for="apply-company-type" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Company Type *</label>
+								<select id="apply-company-type" bind:value={form.company_type} class={fieldCls('company_type')}>
 									{#each COMPANY_TYPES as ct}
 										<option value={ct.value}>{ct.label}</option>
 									{/each}
@@ -268,9 +268,9 @@
 							</div>
 							<!-- Company Name + search trigger -->
 							<div class="md:col-span-2">
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Company Name *</label>
+								<label for="apply-company-name" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Company Name *</label>
 								<div class="flex gap-2">
-									<input bind:value={form.company_name} type="text" onblur={() => touch('company_name')} class="{fieldCls('company_name')} flex-1" />
+									<input id="apply-company-name" bind:value={form.company_name} type="text" onblur={() => touch('company_name')} class="{fieldCls('company_name')} flex-1" />
 									{#if form.company_type === 'limited' || form.company_type === 'plc' || form.company_type === 'llp'}
 										<button type="button" onclick={() => { showSearchModal = true; companySearch = form.company_name; searchCompanies(); }}
 											class="shrink-0 h-[38px] px-3 rounded-lg border border-[#1e3a8a] text-[#1e3a8a] hover:bg-[#1e3a8a] hover:text-white text-xs font-semibold transition-colors">
@@ -281,21 +281,21 @@
 								{#if isInvalid('company_name')}<p class="text-[11px] text-red-500 mt-1">{errMsg('company_name')}</p>{/if}
 							</div>
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Trading Name (if different)</label>
-								<input bind:value={form.trading_name} type="text" class={fieldCls('trading_name')} />
+								<label for="apply-trading-name" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Trading Name (if different)</label>
+								<input id="apply-trading-name" bind:value={form.trading_name} type="text" class={fieldCls('trading_name')} />
 							</div>
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Company Registration No *</label>
-								<input bind:value={form.company_reg_no} type="text" onblur={() => touch('company_reg_no')} class={fieldCls('company_reg_no')} />
+								<label for="apply-company-reg-no" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Company Registration No *</label>
+								<input id="apply-company-reg-no" bind:value={form.company_reg_no} type="text" onblur={() => touch('company_reg_no')} class={fieldCls('company_reg_no')} />
 								{#if isInvalid('company_reg_no')}<p class="text-[11px] text-red-500 mt-1">{errMsg('company_reg_no')}</p>{/if}
 							</div>
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">VAT Reg No</label>
-								<input bind:value={form.vat_reg_no} type="text" class={fieldCls('vat_reg_no')} />
+								<label for="apply-vat-reg-no" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">VAT Reg No</label>
+								<input id="apply-vat-reg-no" bind:value={form.vat_reg_no} type="text" class={fieldCls('vat_reg_no')} />
 							</div>
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Number of Years Trading *</label>
-								<input bind:value={form.years_trading} type="number" min="0" max="200" placeholder="e.g. 10" onblur={() => touch('years_trading')} class={fieldCls('years_trading')} />
+								<label for="apply-years-trading" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Number of Years Trading *</label>
+								<input id="apply-years-trading" bind:value={form.years_trading} type="number" min="0" max="200" placeholder="e.g. 10" onblur={() => touch('years_trading')} class={fieldCls('years_trading')} />
 								{#if isInvalid('years_trading')}<p class="text-[11px] text-red-500 mt-1">{errMsg('years_trading')}</p>{/if}
 							</div>
 						</div>
@@ -309,35 +309,35 @@
 						</div>
 						<div class="space-y-3">
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Trading Address *</label>
-								<textarea bind:value={form.trading_address} rows="2" onblur={() => touch('trading_address')} class="{fieldCls('trading_address')} resize-none"></textarea>
+								<label for="apply-trading-address" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Trading Address *</label>
+								<textarea id="apply-trading-address" bind:value={form.trading_address} rows="2" onblur={() => touch('trading_address')} class="{fieldCls('trading_address')} resize-none"></textarea>
 								{#if isInvalid('trading_address')}<p class="text-[11px] text-red-500 mt-1">{errMsg('trading_address')}</p>{/if}
 							</div>
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Registered Office Address *</label>
-								<textarea bind:value={form.registered_address} rows="2" onblur={() => touch('registered_address')} class="{fieldCls('registered_address')} resize-none"></textarea>
+								<label for="apply-registered-address" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Registered Office Address *</label>
+								<textarea id="apply-registered-address" bind:value={form.registered_address} rows="2" onblur={() => touch('registered_address')} class="{fieldCls('registered_address')} resize-none"></textarea>
 								{#if isInvalid('registered_address')}<p class="text-[11px] text-red-500 mt-1">{errMsg('registered_address')}</p>{/if}
 							</div>
 							<div class="grid grid-cols-2 gap-3">
 								<div>
-									<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Country *</label>
-									<input bind:value={form.country} type="text" onblur={() => touch('country')} class={fieldCls('country')} />
+									<label for="apply-country" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Country *</label>
+									<input id="apply-country" bind:value={form.country} type="text" onblur={() => touch('country')} class={fieldCls('country')} />
 									{#if isInvalid('country')}<p class="text-[11px] text-red-500 mt-1">{errMsg('country')}</p>{/if}
 								</div>
 								<div>
-									<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Telephone No. *</label>
-									<input bind:value={form.telephone} type="tel" onblur={() => touch('telephone')} class={fieldCls('telephone')} />
+									<label for="apply-telephone" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Telephone No. *</label>
+									<input id="apply-telephone" bind:value={form.telephone} type="tel" onblur={() => touch('telephone')} class={fieldCls('telephone')} />
 									{#if isInvalid('telephone')}<p class="text-[11px] text-red-500 mt-1">{errMsg('telephone')}</p>{/if}
 								</div>
 							</div>
 							<div class="grid grid-cols-2 gap-3">
 								<div>
-									<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Fax</label>
-									<input bind:value={form.fax} type="text" class={fieldCls('fax')} />
+									<label for="apply-fax" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Fax</label>
+									<input id="apply-fax" bind:value={form.fax} type="text" class={fieldCls('fax')} />
 								</div>
 								<div>
-									<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Email *</label>
-									<input bind:value={form.email} type="email" onblur={() => touch('email')} class={fieldCls('email')} />
+									<label for="apply-email" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Email *</label>
+									<input id="apply-email" bind:value={form.email} type="email" onblur={() => touch('email')} class={fieldCls('email')} />
 									{#if isInvalid('email')}<p class="text-[11px] text-red-500 mt-1">{errMsg('email')}</p>{/if}
 								</div>
 							</div>
@@ -359,27 +359,27 @@
 						</div>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 							<div class="md:col-span-2">
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Accounts Contact Name *</label>
-								<input bind:value={form.accounts_contact_name} type="text" onblur={() => touch('accounts_contact_name')} class={fieldCls('accounts_contact_name')} />
+								<label for="apply-accounts-contact-name" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Accounts Contact Name *</label>
+								<input id="apply-accounts-contact-name" bind:value={form.accounts_contact_name} type="text" onblur={() => touch('accounts_contact_name')} class={fieldCls('accounts_contact_name')} />
 								{#if isInvalid('accounts_contact_name')}<p class="text-[11px] text-red-500 mt-1">{errMsg('accounts_contact_name')}</p>{/if}
 							</div>
 							<div class="md:col-span-2">
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Accounts Address *</label>
-								<textarea bind:value={form.accounts_address} rows="2" onblur={() => touch('accounts_address')} class="{fieldCls('accounts_address')} resize-none"></textarea>
+								<label for="apply-accounts-address" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Accounts Address *</label>
+								<textarea id="apply-accounts-address" bind:value={form.accounts_address} rows="2" onblur={() => touch('accounts_address')} class="{fieldCls('accounts_address')} resize-none"></textarea>
 								{#if isInvalid('accounts_address')}<p class="text-[11px] text-red-500 mt-1">{errMsg('accounts_address')}</p>{/if}
 							</div>
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Accounts Phone Number *</label>
-								<input bind:value={form.accounts_phone} type="tel" onblur={() => touch('accounts_phone')} class={fieldCls('accounts_phone')} />
+								<label for="apply-accounts-phone" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Accounts Phone Number *</label>
+								<input id="apply-accounts-phone" bind:value={form.accounts_phone} type="tel" onblur={() => touch('accounts_phone')} class={fieldCls('accounts_phone')} />
 								{#if isInvalid('accounts_phone')}<p class="text-[11px] text-red-500 mt-1">{errMsg('accounts_phone')}</p>{/if}
 							</div>
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Accounts Fax Number</label>
-								<input bind:value={form.accounts_fax} type="text" class={fieldCls('accounts_fax')} />
+								<label for="apply-accounts-fax" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Accounts Fax Number</label>
+								<input id="apply-accounts-fax" bind:value={form.accounts_fax} type="text" class={fieldCls('accounts_fax')} />
 							</div>
 							<div class="md:col-span-2">
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Accounts Email Address *</label>
-								<input bind:value={form.accounts_email} type="email" onblur={() => touch('accounts_email')} class={fieldCls('accounts_email')} />
+								<label for="apply-accounts-email" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Accounts Email Address *</label>
+								<input id="apply-accounts-email" bind:value={form.accounts_email} type="email" onblur={() => touch('accounts_email')} class={fieldCls('accounts_email')} />
 								{#if isInvalid('accounts_email')}<p class="text-[11px] text-red-500 mt-1">{errMsg('accounts_email')}</p>{/if}
 							</div>
 						</div>
@@ -393,28 +393,28 @@
 						</div>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Business Bankers *</label>
-								<input bind:value={form.bank_name} type="text" onblur={() => touch('bank_name')} class={fieldCls('bank_name')} />
+								<label for="apply-bank-name" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Business Bankers *</label>
+								<input id="apply-bank-name" bind:value={form.bank_name} type="text" onblur={() => touch('bank_name')} class={fieldCls('bank_name')} />
 								{#if isInvalid('bank_name')}<p class="text-[11px] text-red-500 mt-1">{errMsg('bank_name')}</p>{/if}
 							</div>
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">How Long Banked With *</label>
-								<input bind:value={form.bank_how_long} type="text" placeholder="e.g. 5 Years" onblur={() => touch('bank_how_long')} class={fieldCls('bank_how_long')} />
+								<label for="apply-bank-how-long" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">How Long Banked With *</label>
+								<input id="apply-bank-how-long" bind:value={form.bank_how_long} type="text" placeholder="e.g. 5 Years" onblur={() => touch('bank_how_long')} class={fieldCls('bank_how_long')} />
 								{#if isInvalid('bank_how_long')}<p class="text-[11px] text-red-500 mt-1">{errMsg('bank_how_long')}</p>{/if}
 							</div>
 							<div class="md:col-span-2">
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Bank Address *</label>
-								<textarea bind:value={form.bank_address} rows="2" onblur={() => touch('bank_address')} class="{fieldCls('bank_address')} resize-none"></textarea>
+								<label for="apply-bank-address" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Bank Address *</label>
+								<textarea id="apply-bank-address" bind:value={form.bank_address} rows="2" onblur={() => touch('bank_address')} class="{fieldCls('bank_address')} resize-none"></textarea>
 								{#if isInvalid('bank_address')}<p class="text-[11px] text-red-500 mt-1">{errMsg('bank_address')}</p>{/if}
 							</div>
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Sort Code *</label>
-								<input bind:value={form.sort_code} type="text" placeholder="00-00-00" onblur={() => touch('sort_code')} class={fieldCls('sort_code')} />
+								<label for="apply-sort-code" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Sort Code *</label>
+								<input id="apply-sort-code" bind:value={form.sort_code} type="text" placeholder="00-00-00" onblur={() => touch('sort_code')} class={fieldCls('sort_code')} />
 								{#if isInvalid('sort_code')}<p class="text-[11px] text-red-500 mt-1">{errMsg('sort_code')}</p>{/if}
 							</div>
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Account Number *</label>
-								<input bind:value={form.account_number} type="text" onblur={() => touch('account_number')} class={fieldCls('account_number')} />
+								<label for="apply-account-number" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Account Number *</label>
+								<input id="apply-account-number" bind:value={form.account_number} type="text" onblur={() => touch('account_number')} class={fieldCls('account_number')} />
 								{#if isInvalid('account_number')}<p class="text-[11px] text-red-500 mt-1">{errMsg('account_number')}</p>{/if}
 							</div>
 						</div>
@@ -428,13 +428,13 @@
 						</div>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Your Payment Terms *</label>
-								<input bind:value={form.payment_terms} type="text" placeholder="e.g. 30 Days Strict" onblur={() => touch('payment_terms')} class={fieldCls('payment_terms')} />
+								<label for="apply-payment-terms" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Your Payment Terms *</label>
+								<input id="apply-payment-terms" bind:value={form.payment_terms} type="text" placeholder="e.g. 30 Days Strict" onblur={() => touch('payment_terms')} class={fieldCls('payment_terms')} />
 								{#if isInvalid('payment_terms')}<p class="text-[11px] text-red-500 mt-1">{errMsg('payment_terms')}</p>{/if}
 							</div>
 							<div>
-								<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Who Recommended Direct Route To You?</label>
-								<input bind:value={form.who_recommended} type="text" class={fieldCls('who_recommended')} />
+								<label for="apply-who-recommended" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Who Recommended Direct Route To You?</label>
+								<input id="apply-who-recommended" bind:value={form.who_recommended} type="text" class={fieldCls('who_recommended')} />
 							</div>
 						</div>
 					</div>
@@ -475,12 +475,12 @@
 
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 						<div>
-							<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Contact Name *</label>
-							<input bind:value={form.contact_name} type="text" class={inputCls} />
+							<label for="apply-contact-name" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Contact Name *</label>
+							<input id="apply-contact-name" bind:value={form.contact_name} type="text" class={inputCls} />
 						</div>
 						<div>
-							<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Contact Position / Title *</label>
-							<input bind:value={form.contact_position} type="text" placeholder="e.g. Director" class={inputCls} />
+							<label for="apply-contact-position" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1">Contact Position / Title *</label>
+							<input id="apply-contact-position" bind:value={form.contact_position} type="text" placeholder="e.g. Director" class={inputCls} />
 						</div>
 					</div>
 

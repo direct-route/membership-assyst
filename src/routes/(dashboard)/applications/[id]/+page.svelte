@@ -381,8 +381,8 @@
 			<div class="p-6">
 				<h3 class="nunito-sans-700 text-lg text-slate-900 mb-1">Decline Application</h3>
 				<p class="text-sm text-slate-500 mb-4">This will notify the customer by email that their application has been declined.</p>
-				<label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1.5">Reason (optional)</label>
-				<textarea bind:value={declineReason} rows="3" placeholder="Reason for declining…"
+				<label for="decline-reason" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1.5">Reason (optional)</label>
+				<textarea id="decline-reason" bind:value={declineReason} rows="3" placeholder="Reason for declining…"
 					class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-red-400 resize-none"></textarea>
 				<div class="flex items-center justify-end gap-3 mt-4">
 					<button onclick={() => showDeclineModal = false}
