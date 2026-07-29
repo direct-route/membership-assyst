@@ -100,7 +100,7 @@
 <p>Additionally you are entitled to a complimentary start up benefit from our renowned sister company AccountAssyst. This enables you to obtain some free credit reports, open new customer accounts and operate your own credit control amongst other things. Simply visit <a href="https://directroute.accountassyst.com">https://directroute.accountassyst.com</a> and Join Now to activate your free benefit.</p>
 <p><strong>What Happens Next?</strong></p>
 <p>Once we receive your Membership Application Form <a href="{{apply_url}}">click here</a> we will instantly process your application, activate your Fairway Gold Membership and send you details of how to begin benefiting from the effective collection of all of your future overdue customers, starting immediately.</p>
-<p>Kindly note that all debt instructions submitted are subject to our <a href="https://directroute.co.uk/terms">Terms and Conditions</a>.</p>
+<p>Kindly note that all debt instructions submitted are subject to our <a href="https://www.directroute.co.uk/terms">Terms and Conditions</a>.</p>
 <p>We very much look forward to hearing from you further.</p>`;
 
 	$effect(() => {
