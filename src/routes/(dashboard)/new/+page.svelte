@@ -86,22 +86,7 @@
 	let editorEl = $state(null);
 	let editor = $state(null);
 
-	const DEFAULT_EMAIL_HTML = `<p>Dear {{contact_name}}</p>
-<p>Re: Invitation to become a Fairway Gold Member - {{company_name}}</p>
-<p>We write further to our recent conversation concerning our debt collection services.</p>
-<p>We note that you require assistance with several overdue customers annually. Additionally you have advised that when outsourcing debt you ordinarily would not have any intention of future dealings with the customer.</p>
-<p>Having considered the position therefore we are pleased to advise that you qualify for, and indeed we would recommend, our Fairway Gold Membership service as being the most appropriate for your needs.</p>
-<p>Fairway Gold is a Credit Management Solution available exclusively through Direct Route.</p>
-<p>As a Fairway Gold Member you will receive zero cost debt recovery on all debts up to £3000 and subsidised 2% recovery commission on all collected debts of greater value.</p>
-<p>If you have received this email then great news...you have already been pre-qualified for Fairway Gold Membership. This communication is your formal invitation to join.</p>
-<p><strong>To accept the invitation:</strong></p>
-<p>1. Follow this link <a href="{{apply_url}}">click here</a> to complete your Fairway Gold Membership Application Form.</p>
-<p>You have received a complimentary Fairway Gold Membership courtesy of the business partner identified by you within our call.</p>
-<p>Additionally you are entitled to a complimentary start up benefit from our renowned sister company AccountAssyst. This enables you to obtain some free credit reports, open new customer accounts and operate your own credit control amongst other things. Simply visit <a href="https://directroute.accountassyst.com">https://directroute.accountassyst.com</a> and Join Now to activate your free benefit.</p>
-<p><strong>What Happens Next?</strong></p>
-<p>Once we receive your Membership Application Form <a href="{{apply_url}}">click here</a> we will instantly process your application, activate your Fairway Gold Membership and send you details of how to begin benefiting from the effective collection of all of your future overdue customers, starting immediately.</p>
-<p>Kindly note that all debt instructions submitted are subject to our <a href="https://www.directroute.co.uk/terms">Terms and Conditions</a>.</p>
-<p>We very much look forward to hearing from you further.</p>`;
+	const DEFAULT_EMAIL_HTML = `<p>Dear {{contact_name}},</p><p>You have been invited to apply for membership with Direct Route Collections Limited. Please click the link below to begin your application:</p><p><a href="{{apply_url}}">Begin Application</a></p><p>Kindly note that all debt instructions submitted are subject to our <a href="/terms.pdf">Terms &amp; Conditions</a>.</p><p>We very much look forward to hearing from you.</p>`;
 
 	$effect(() => {
 		const el = editorEl;
