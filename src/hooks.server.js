@@ -40,7 +40,7 @@ export async function handle({ event, resolve }) {
 	if (authValid && pb.authStore.token && path !== '/signout') {
 		response.headers.append(
 			'set-cookie',
-			pb.authStore.exportToCookie({ httpOnly: true, secure: false, sameSite: 'Lax', maxAge: 60 * 60 * 24 * 30 })
+			pb.authStore.exportToCookie({ httpOnly: true, secure: true, sameSite: 'Lax', maxAge: 60 * 60 * 24 * 30 })
 		);
 	}
 
