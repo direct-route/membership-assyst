@@ -150,9 +150,12 @@
 	let editorHtml = $state('');
 
 	function substitutePreview(text) {
+		const previewCompany = (form.company_type === 'sole_trader' && !form.company_name)
+			? (form.contact_name || '<em>{{company_name}}</em>')
+			: (form.company_name || '<em>{{company_name}}</em>');
 		return (text || '')
 			.replace(/\{\{contact_name\}\}/g, form.contact_name || '<em>{{contact_name}}</em>')
-			.replace(/\{\{company_name\}\}/g, form.company_name || '<em>{{company_name}}</em>')
+			.replace(/\{\{company_name\}\}/g, previewCompany)
 			.replace(/\{\{licensee_name\}\}/g, 'Direct Route')
 			.replace(/\{\{apply_url\}\}/g, '<a href="#" style="color:#1e3a8a;text-decoration:underline">application link</a>');
 	}
@@ -173,12 +176,16 @@
 		if (!form.contact_name || !form.email) { error = 'Contact name and email are required.'; return; }
 		if (!form.membership_type_id) { error = 'Please select a membership type.'; return; }
 		loading = true;
+		const effectiveCompanyName = (form.company_type === 'sole_trader' && !form.company_name)
+			? form.contact_name
+			: form.company_name;
 		try {
 			const res = await fetch('/api/applications/invite', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
 					...form,
+					company_name: effectiveCompanyName,
 					email_body: editor?.getHTML() ?? DEFAULT_EMAIL_HTML
 				})
 			});
