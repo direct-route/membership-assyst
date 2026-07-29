@@ -9,8 +9,15 @@ export async function handle({ event, resolve }) {
 	pb.autoCancellation(false);
 	event.locals.pb = pb;
 
-	const cookie = event.request.headers.get('cookie') ?? '';
-	pb.authStore.loadFromCookie(cookie);
+	const rawCookie = event.cookies.get('pb_auth');
+	if (rawCookie) {
+		try {
+			const { token, record } = JSON.parse(rawCookie);
+			pb.authStore.save(token, record);
+		} catch {
+			// malformed cookie — ignore
+		}
+	}
 
 	let authValid = false;
 
@@ -38,10 +45,14 @@ export async function handle({ event, resolve }) {
 	const response = await resolve(event);
 
 	if (authValid && pb.authStore.token && path !== '/signout') {
-		response.headers.append(
-			'set-cookie',
-			pb.authStore.exportToCookie({ httpOnly: true, secure: true, sameSite: 'Lax', maxAge: 60 * 60 * 24 * 30 })
-		);
+		const cookieValue = JSON.stringify({ token: pb.authStore.token, record: pb.authStore.record });
+		event.cookies.set('pb_auth', cookieValue, {
+			path: '/',
+			httpOnly: true,
+			secure: true,
+			sameSite: 'Lax',
+			maxAge: 60 * 60 * 24 * 30
+		});
 	}
 
 	return response;

@@ -17,8 +17,8 @@ export const actions = {
 		const pb = new PocketBase(PUBLIC_POCKETBASE_URL);
 		try {
 			await pb.collection('users').authWithPassword(email, password);
-			const cookieValue = encodeURIComponent(JSON.stringify({ token: pb.authStore.token, record: pb.authStore.record }));
-			cookies.set('pb_auth', cookieValue, { path: '/', httpOnly: true, sameSite: 'lax', maxAge: 60 * 60 * 24 * 30, encode: v => v });
+			const cookieValue = JSON.stringify({ token: pb.authStore.token, record: pb.authStore.record });
+			cookies.set('pb_auth', cookieValue, { path: '/', httpOnly: true, secure: true, sameSite: 'Lax', maxAge: 60 * 60 * 24 * 30 });
 		} catch {
 			return fail(401, { error: 'Invalid email or password.' });
 		}
