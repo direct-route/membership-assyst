@@ -238,6 +238,17 @@
 						<div class="px-4 py-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">{error}</div>
 					{/if}
 
+					<!-- Company Type (first) -->
+					<div>
+						<label for="company-type-top" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1.5">Company Type *</label>
+						<select id="company-type-top" bind:value={form.company_type}
+							class="w-full px-3.5 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a] bg-white">
+							{#each COMPANY_TYPES as ct}
+								<option value={ct.value}>{ct.label}</option>
+							{/each}
+						</select>
+					</div>
+
 					<!-- Company search -->
 					<div>
 						<label for="company-search" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1.5">Company Search</label>
@@ -293,15 +304,6 @@
 							<label for="telephone" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1.5">Telephone</label>
 							<input id="telephone" bind:value={form.telephone} type="tel" placeholder="e.g. 01274 223190"
 								class="w-full px-3.5 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a]" />
-						</div>
-						<div>
-							<label for="company-type" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1.5">Company Type *</label>
-							<select id="company-type" bind:value={form.company_type}
-								class="w-full px-3.5 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a] bg-white">
-								{#each COMPANY_TYPES as ct}
-									<option value={ct.value}>{ct.label}</option>
-								{/each}
-							</select>
 						</div>
 						<div>
 							<label for="membership-type" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1.5">Membership Type *</label>
