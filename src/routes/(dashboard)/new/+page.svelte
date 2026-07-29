@@ -75,9 +75,9 @@
 		if (!mt) return;
 		untrack(() => {
 			if (mt.invite_email_subject) form.email_subject = mt.invite_email_subject;
-			if (editor && mt.invite_email_body) {
-				editor.commands.setContent(mt.invite_email_body);
+			if (mt.invite_email_body) {
 				editorHtml = mt.invite_email_body;
+				if (editor) editor.commands.setContent(mt.invite_email_body);
 			}
 		});
 	});
@@ -132,7 +132,7 @@
 	// ── Email view toggle ───────────────────────────────────────────
 	let emailView = $state('edit'); // 'edit' | 'preview'
 
-	let editorHtml = $state('');
+	let editorHtml = $state(DEFAULT_EMAIL_HTML);
 
 	function substitutePreview(text) {
 		const previewCompany = (form.company_type === 'sole_trader' && !form.company_name)
@@ -171,7 +171,7 @@
 				body: JSON.stringify({
 					...form,
 					company_name: effectiveCompanyName,
-					email_body: editor?.getHTML() ?? DEFAULT_EMAIL_HTML
+					email_body: editorHtml || editor?.getHTML() || DEFAULT_EMAIL_HTML
 				})
 			});
 			const data = await res.json();
