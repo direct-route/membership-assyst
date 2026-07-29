@@ -1,6 +1,6 @@
 <script>
 	import { enhance } from '$app/forms';
-	import { PUBLIC_POCKETBASE_URL } from '$env/static/public';
+	import { pbFileUrl } from '$lib/pocketbase.js';
 
 	let { data } = $props();
 	let { applications, role, debtPartners, licensees } = $derived.by(() => data);
@@ -295,7 +295,7 @@
 								<td class="px-4 py-3.5">
 									<div class="flex items-center gap-1.5">
 										{#if app.expand?.membership_type_id?.logo}
-											<img src="{PUBLIC_POCKETBASE_URL}/api/files/ma_membership_types/{app.expand.membership_type_id.id}/{app.expand.membership_type_id.logo}" alt="" class="w-5 h-5 rounded object-contain shrink-0" />
+											<img src={pbFileUrl('ma_membership_types', app.expand.membership_type_id.id, app.expand.membership_type_id.logo)} alt="" class="w-5 h-5 rounded object-contain shrink-0" />
 										{/if}
 										<span class="text-xs font-medium text-slate-700">{app.expand?.membership_type_id?.name || '—'}</span>
 									</div>
