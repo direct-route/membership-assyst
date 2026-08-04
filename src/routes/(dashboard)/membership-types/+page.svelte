@@ -4,6 +4,7 @@
 	let types = $derived(data.types);
 	let active = $derived(types.filter(t => t.active !== false));
 	let inactive = $derived(types.filter(t => t.active === false));
+	let accountAssystCount = $derived(types.filter(t => (t.invite_email_body || '').includes('accountassyst.com')).length);
 	let showAdd = $state(false);
 	let newName = $state('');
 </script>
@@ -20,6 +21,13 @@
 			New Membership Type
 		</button>
 	</div>
+
+	{#if accountAssystCount > 0}
+		<div class="mb-5 px-4 py-3 rounded-lg bg-amber-50 border border-amber-200 flex items-center gap-3 text-sm">
+			<svg class="w-5 h-5 text-amber-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+			<span class="text-amber-800"><strong>{accountAssystCount} template{accountAssystCount !== 1 ? 's' : ''}</strong> contain an <code class="font-mono text-xs bg-amber-100 px-1 py-0.5 rounded">accountassyst.com</code> link in the invite email body. Review and update these templates.</span>
+		</div>
+	{/if}
 
 	{#if showAdd}
 		<div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 mb-4">
@@ -53,8 +61,17 @@
 				</thead>
 				<tbody class="divide-y divide-slate-100">
 					{#each active as t, i}
-						<tr class="{i % 2 === 0 ? 'bg-white' : 'bg-slate-50/40'}">
-							<td class="px-5 py-3.5 font-medium text-slate-800">{t.name}</td>
+						{@const hasAccountAssyst = (t.invite_email_body || '').includes('accountassyst.com')}
+						<tr class="{hasAccountAssyst ? 'bg-amber-50' : i % 2 === 0 ? 'bg-white' : 'bg-slate-50/40'}">
+							<td class="px-5 py-3.5 font-medium text-slate-800">
+								{t.name}
+								{#if hasAccountAssyst}
+									<span class="ml-2 inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-100 text-amber-700 border border-amber-200">
+										<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+										accountassyst.com link
+									</span>
+								{/if}
+							</td>
 							<td class="px-5 py-3.5 text-center">
 								{#if t.insight_debt_partners_id}
 									<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-violet-50 text-violet-700 border border-violet-100">DP:{t.insight_debt_partners_id}</span>
@@ -108,8 +125,17 @@
 				</thead>
 				<tbody class="divide-y divide-slate-100">
 					{#each inactive as t, i}
-						<tr class="{i % 2 === 0 ? 'bg-white' : 'bg-slate-50/40'}">
-							<td class="px-5 py-3.5 font-medium text-slate-400 line-through">{t.name}</td>
+						{@const hasAccountAssyst = (t.invite_email_body || '').includes('accountassyst.com')}
+						<tr class="{hasAccountAssyst ? 'bg-amber-50' : i % 2 === 0 ? 'bg-white' : 'bg-slate-50/40'}">
+							<td class="px-5 py-3.5 font-medium text-slate-400 line-through">
+								{t.name}
+								{#if hasAccountAssyst}
+									<span class="ml-2 inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-100 text-amber-700 border border-amber-200">
+										<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+										accountassyst.com link
+									</span>
+								{/if}
+							</td>
 							<td class="px-5 py-3.5 text-center">
 								{#if t.insight_debt_partners_id}
 									<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-slate-100 text-slate-500 border border-slate-200">DP:{t.insight_debt_partners_id}</span>

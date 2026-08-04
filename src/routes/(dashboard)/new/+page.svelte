@@ -15,7 +15,8 @@
 	let selectedCompany = $state(null);
 	let showDropdown = $state(false);
 	let manualEntry = $state(false);
-	let searchBlurTimer = null;
+	let searchWrap = $state(null);
+	let blurTimer = null;
 
 	async function searchCompanies() {
 		if (!companySearch.trim()) return;
@@ -30,18 +31,22 @@
 			});
 			const json = await res.json();
 			searchResults = json.companies ?? [];
-			showDropdown = true;
+			showDropdown = searchResults.length > 0;
 		} catch { searchResults = []; }
 		searching = false;
 	}
 
 	function onSearchBlur() {
-		// Delay hide so click on dropdown item registers first
-		searchBlurTimer = setTimeout(() => { showDropdown = false; }, 200);
+		clearTimeout(blurTimer);
+		blurTimer = setTimeout(() => {
+			if (companySearch.trim() && !selectedCompany) {
+				searchCompanies();
+			}
+		}, 500);
 	}
 
 	function onSearchFocus() {
-		clearTimeout(searchBlurTimer);
+		clearTimeout(blurTimer);
 		if (searchResults.length) showDropdown = true;
 	}
 
@@ -49,6 +54,12 @@
 		showDropdown = false;
 		manualEntry = true;
 		searchResults = [];
+	}
+
+	function handleOutsideClick(e) {
+		if (searchWrap && !searchWrap.contains(e.target)) {
+			showDropdown = false;
+		}
 	}
 
 	const CREDITSAFE_TYPE_MAP = {
@@ -102,6 +113,12 @@
 	let selectedType = $derived(
 		membershipTypes.find(mt => mt.id === form.membership_type_id) ?? null
 	);
+
+	$effect(() => {
+		if (!searchWrap) return;
+		document.addEventListener('click', handleOutsideClick);
+		return () => document.removeEventListener('click', handleOutsideClick);
+	});
 
 	// When membership type changes, update subject + editor content
 	$effect(() => {
@@ -284,7 +301,7 @@
 					</div>
 
 					<!-- Company search -->
-					<div class="relative">
+					<div class="relative" bind:this={searchWrap}>
 						<label for="company-search" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1.5">Company Search</label>
 						{#if !selectedCompany}
 							<input id="company-search" bind:value={companySearch} type="text"
