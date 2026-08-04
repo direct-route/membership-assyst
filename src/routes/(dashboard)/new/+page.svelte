@@ -13,11 +13,15 @@
 	let searchResults = $state([]);
 	let searching = $state(false);
 	let selectedCompany = $state(null);
+	let showDropdown = $state(false);
+	let manualEntry = $state(false);
+	let searchBlurTimer = null;
 
 	async function searchCompanies() {
 		if (!companySearch.trim()) return;
 		searching = true;
 		searchResults = [];
+		showDropdown = false;
 		try {
 			const res = await fetch('/api/creditsafe/search', {
 				method: 'POST',
@@ -26,8 +30,25 @@
 			});
 			const json = await res.json();
 			searchResults = json.companies ?? [];
+			showDropdown = true;
 		} catch { searchResults = []; }
 		searching = false;
+	}
+
+	function onSearchBlur() {
+		// Delay hide so click on dropdown item registers first
+		searchBlurTimer = setTimeout(() => { showDropdown = false; }, 200);
+	}
+
+	function onSearchFocus() {
+		clearTimeout(searchBlurTimer);
+		if (searchResults.length) showDropdown = true;
+	}
+
+	function enterManually() {
+		showDropdown = false;
+		manualEntry = true;
+		searchResults = [];
 	}
 
 	const CREDITSAFE_TYPE_MAP = {
@@ -47,6 +68,8 @@
 			form.company_type = CREDITSAFE_TYPE_MAP[c.type];
 		}
 		searchResults = [];
+		showDropdown = false;
+		manualEntry = false;
 		companySearch = c.name;
 	}
 
@@ -261,44 +284,58 @@
 					</div>
 
 					<!-- Company search -->
-					<div>
+					<div class="relative">
 						<label for="company-search" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1.5">Company Search</label>
-						<div class="flex gap-2">
-							<input id="company-search" bind:value={companySearch} type="text" placeholder="Start typing company name…"
+						{#if !selectedCompany}
+							<input id="company-search" bind:value={companySearch} type="text"
+								placeholder="Type company name and press Enter or Tab…"
 								onkeydown={(e) => e.key === 'Enter' && searchCompanies()}
-								class="flex-1 px-3.5 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a]" />
-							<button onclick={searchCompanies} disabled={searching}
-								class="h-10 px-4 rounded-lg bg-[#1e3a8a] hover:bg-[#1e40af] text-white text-sm font-semibold transition-colors disabled:opacity-60 shrink-0">
-								{searching ? '…' : 'Search'}
-							</button>
-						</div>
+								onblur={onSearchBlur}
+								onfocus={onSearchFocus}
+								class="w-full px-3.5 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a] {searching ? 'opacity-70' : ''}" />
+							{#if searching}
+								<span class="absolute right-3 top-[2.6rem] text-xs text-slate-400 animate-pulse">Searching…</span>
+							{/if}
 
-						{#if searchResults.length > 0}
-							<div class="mt-2 border border-slate-200 rounded-lg overflow-hidden max-h-56 overflow-y-auto">
-								{#each searchResults as c}
-									<button onclick={() => selectCompany(c)}
-										class="w-full text-left px-4 py-3 flex items-start gap-3 hover:bg-blue-50/60 border-b border-slate-100 last:border-0 transition-colors">
-										<div class="min-w-0 flex-1">
-											<p class="text-sm font-semibold text-slate-800">{c.name}</p>
-											<p class="text-[11px] text-slate-500">{c.regNo ? `Reg: ${c.regNo}` : ''}{c.type ? ` · ${c.type}` : ''}</p>
-											{#if c.address}<p class="text-[11px] text-slate-400 truncate">{c.address}</p>{/if}
-										</div>
-										<span class="text-[11px] font-semibold text-[#1e3a8a] shrink-0 mt-0.5">Select</span>
+							{#if showDropdown && (searchResults.length > 0 || !searching)}
+								<div class="absolute z-20 left-0 right-0 mt-1 border border-slate-200 rounded-lg shadow-lg bg-white overflow-hidden max-h-64 overflow-y-auto">
+									{#each searchResults as c}
+										<button type="button" onmousedown={() => selectCompany(c)}
+											class="w-full text-left px-4 py-3 flex items-start gap-3 hover:bg-blue-50/60 border-b border-slate-100 last:border-0 transition-colors">
+											<div class="min-w-0 flex-1">
+												<p class="text-sm font-semibold text-slate-800">{c.name}</p>
+												<p class="text-[11px] text-slate-500">{c.regNo ? `Reg: ${c.regNo}` : ''}{c.type ? ` · ${c.type}` : ''}</p>
+												{#if c.address}<p class="text-[11px] text-slate-400 truncate">{c.address}</p>{/if}
+											</div>
+										</button>
+									{/each}
+									<button type="button" onmousedown={enterManually}
+										class="w-full text-left px-4 py-3 flex items-center gap-2 bg-slate-50 hover:bg-slate-100 border-t border-slate-200 transition-colors">
+										<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536M9 13l6-6m-6 6H6v-3l9-9a2 2 0 012.828 0l.708.708A2 2 0 0118 7.172L9 16z"/></svg>
+										<span class="text-sm text-slate-600 font-medium">Not found — enter manually</span>
 									</button>
-								{/each}
-							</div>
+								</div>
+							{/if}
 						{/if}
 
 						{#if selectedCompany}
-							<div class="mt-2 px-4 py-2.5 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center gap-2 text-sm">
+							<div class="px-4 py-2.5 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center gap-2 text-sm">
 								<svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
 								<span class="font-semibold text-emerald-800">{selectedCompany.name}</span>
 								{#if selectedCompany.regNo}<span class="text-emerald-600 text-[11px]">· {selectedCompany.regNo}</span>{/if}
-								<button onclick={() => { selectedCompany = null; companySearch = ''; form.company_name = ''; form.company_reg_no = ''; form.trading_address = ''; }}
+								<button type="button" onclick={() => { selectedCompany = null; companySearch = ''; form.company_name = ''; form.company_reg_no = ''; form.trading_address = ''; manualEntry = false; searchResults = []; }}
 									class="ml-auto text-emerald-600 hover:text-emerald-800 text-[11px] font-semibold">Clear</button>
 							</div>
 						{/if}
 					</div>
+
+					{#if manualEntry && !selectedCompany}
+						<div>
+							<label for="manual-company-name" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1.5">Company Name *</label>
+							<input id="manual-company-name" bind:value={form.company_name} type="text" placeholder="Enter company name…"
+								class="w-full px-3.5 py-2.5 rounded-lg border border-amber-300 bg-amber-50/30 text-sm focus:outline-none focus:ring-2 focus:ring-amber-300/40 focus:border-amber-400" />
+						</div>
+					{/if}
 
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 						<div>

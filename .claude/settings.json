@@ -3,7 +3,10 @@
     "allow": [
       "Bash(rm package-lock.json)",
       "Bash(pnpm pkg *)",
-      "Bash(mkdir -p \"c:\\\\Users\\\\Lee\\\\Desktop\\\\NEW PROJECTS\\\\membership-assyst\\\\src\\\\routes\\\\\\(dashboard\\)\\\\membership-types\\\\[id]\")"
+      "Bash(mkdir -p \"c:\\\\Users\\\\Lee\\\\Desktop\\\\NEW PROJECTS\\\\membership-assyst\\\\src\\\\routes\\\\\\(dashboard\\)\\\\membership-types\\\\[id]\")",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\Lee\\Desktop\\NEW PROJECTS\\membership-assyst\\src\\routes\\(dashboard)\\membership-types"
