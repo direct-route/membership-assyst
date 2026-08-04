@@ -75,7 +75,7 @@
 		selectedCompany = c;
 		form.company_name = c.name;
 		form.company_reg_no = c.regNo ?? '';
-		form.trading_address = c.address ?? '';
+		form.registered_address = c.address ?? '';
 		if (c.type && CREDITSAFE_TYPE_MAP[c.type]) {
 			form.company_type = CREDITSAFE_TYPE_MAP[c.type];
 		}
@@ -107,6 +107,7 @@
 		company_name: '',
 		company_reg_no: '',
 		trading_address: '',
+		registered_address: '',
 		email_subject: 'Membership Invitation - Direct Route - {{licensee_name}}'
 	});
 
@@ -238,7 +239,7 @@
 
 	function reset() {
 		success = false;
-		form = { contact_name:'', email:'', telephone:'', company_type:'limited', membership_type_id:'', terms_payment:'30 Days Strict', company_name:'', company_reg_no:'', trading_address:'', email_subject:'Membership Invitation - Direct Route - {{licensee_name}}' };
+		form = { contact_name:'', email:'', telephone:'', company_type:'limited', membership_type_id:'', terms_payment:'30 Days Strict', company_name:'', company_reg_no:'', trading_address:'', registered_address:'', email_subject:'Membership Invitation - Direct Route - {{licensee_name}}' };
 		selectedCompany = null;
 		companySearch = '';
 		editor?.commands.setContent(DEFAULT_EMAIL_HTML);
@@ -341,7 +342,7 @@
 								<svg class="w-5 h-5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
 								<span class="font-semibold text-emerald-800 text-base">{selectedCompany.name}</span>
 								{#if selectedCompany.regNo}<span class="text-emerald-600 text-sm">· {selectedCompany.regNo}</span>{/if}
-								<button type="button" onclick={() => { selectedCompany = null; companySearch = ''; form.company_name = ''; form.company_reg_no = ''; form.trading_address = ''; manualEntry = false; searchResults = []; }}
+								<button type="button" onclick={() => { selectedCompany = null; companySearch = ''; form.company_name = ''; form.company_reg_no = ''; form.trading_address = ''; form.registered_address = ''; manualEntry = false; searchResults = []; }}
 									class="ml-auto text-emerald-600 hover:text-emerald-800 text-sm font-semibold">Clear</button>
 							</div>
 						{/if}

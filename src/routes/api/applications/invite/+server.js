@@ -11,7 +11,7 @@ export async function POST({ request, locals }) {
 	const body = await request.json();
 	const {
 		contact_name, email, telephone, company_type, membership_type_id, terms_payment,
-		company_name, company_reg_no, trading_address,
+		company_name, company_reg_no, trading_address, registered_address,
 		email_subject, email_body
 	} = body;
 
@@ -35,6 +35,7 @@ export async function POST({ request, locals }) {
 				company_name: company_name || '',
 				company_reg_no: company_reg_no || '',
 				trading_address: trading_address || '',
+				registered_address: registered_address || '',
 				invite_token: token,
 				invite_sent_at: new Date().toISOString()
 			})

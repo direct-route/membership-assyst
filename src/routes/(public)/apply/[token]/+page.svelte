@@ -454,13 +454,12 @@
 					<h2 class="nunito-sans-700 text-xl text-slate-900 mt-0.5">Terms &amp; Conditions</h2>
 				</div>
 				<div class="p-6 space-y-5">
-					<div class="bg-slate-50 rounded-lg border border-slate-200 p-4 text-sm text-slate-600 leading-relaxed space-y-3 max-h-64 overflow-y-auto">
-						<p>This company uses a third party credit reference agency for credit assessment purposes.</p>
-						<p>In submitting this request, you are hereby providing us with your consent to carry out any credit reference searches we deem necessary to support your application. These searches will be taken for credit information purposes only, and may be carried out on both your business and the owners of the business.</p>
-						<p>Collection terms - The parties agree that the terms of the Direct Route Collections Limited Collection Process shall apply on all newly instructed cases from this day henceforth to work in conjunction with any specific other terms agreed in writing between the parties, such as for example Platinum Club or bespoke commission variations.</p>
-						<p>This does not affect your statutory rights.</p>
-						<p>Declaration - I confirm that I wish to apply for membership with Direct Route Collections Limited. I declare that I have fully authority to make such an application.</p>
-					</div>
+					<iframe
+						src="https://www.aadrc.co.uk/terms.pdf"
+						title="Terms & Conditions"
+						class="w-full rounded-lg border border-slate-200"
+						style="height: 420px;"
+					></iframe>
 
 					<div class="space-y-3">
 						<label class="flex items-start gap-3 cursor-pointer">
