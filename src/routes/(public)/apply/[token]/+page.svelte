@@ -76,7 +76,7 @@
 	function selectCompany(c) {
 		form.company_name = c.name;
 		form.company_reg_no = c.regNo ?? '';
-		form.trading_address = c.address ?? '';
+		form.registered_address = c.address ?? '';
 		showSearchModal = false;
 		companySearch = '';
 		searchResults = [];
