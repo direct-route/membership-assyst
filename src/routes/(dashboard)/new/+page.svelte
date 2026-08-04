@@ -15,6 +15,7 @@
 	let selectedCompany = $state(null);
 	let showDropdown = $state(false);
 	let manualEntry = $state(false);
+	let companyReady = $derived(!!selectedCompany || (manualEntry && !!form.company_name?.trim()));
 	let searchWrap = $state(null);
 	let blurTimer = null;
 
@@ -309,39 +310,39 @@
 								onkeydown={(e) => e.key === 'Enter' && searchCompanies()}
 								onblur={onSearchBlur}
 								onfocus={onSearchFocus}
-								class="w-full px-3.5 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a] {searching ? 'opacity-70' : ''}" />
+								class="w-full px-4 py-3.5 rounded-lg border border-slate-200 text-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a] {searching ? 'opacity-70' : ''}" />
 							{#if searching}
-								<span class="absolute right-3 top-[2.6rem] text-xs text-slate-400 animate-pulse">Searching…</span>
+								<span class="absolute right-4 top-[3.2rem] text-sm text-slate-400 animate-pulse">Searching…</span>
 							{/if}
 
 							{#if showDropdown && (searchResults.length > 0 || !searching)}
-								<div class="absolute z-20 left-0 right-0 mt-1 border border-slate-200 rounded-lg shadow-lg bg-white overflow-hidden max-h-64 overflow-y-auto">
+								<div class="absolute z-20 left-0 right-0 mt-1 border border-slate-200 rounded-lg shadow-lg bg-white overflow-hidden max-h-72 overflow-y-auto">
 									{#each searchResults as c}
 										<button type="button" onmousedown={() => selectCompany(c)}
-											class="w-full text-left px-4 py-3 flex items-start gap-3 hover:bg-blue-50/60 border-b border-slate-100 last:border-0 transition-colors">
+											class="w-full text-left px-5 py-4 flex items-start gap-3 hover:bg-blue-50/60 border-b border-slate-100 last:border-0 transition-colors">
 											<div class="min-w-0 flex-1">
-												<p class="text-sm font-semibold text-slate-800">{c.name}</p>
-												<p class="text-[11px] text-slate-500">{c.regNo ? `Reg: ${c.regNo}` : ''}{c.type ? ` · ${c.type}` : ''}</p>
-												{#if c.address}<p class="text-[11px] text-slate-400 truncate">{c.address}</p>{/if}
+												<p class="text-base font-semibold text-slate-800">{c.name}</p>
+												<p class="text-sm text-slate-500">{c.regNo ? `Reg: ${c.regNo}` : ''}{c.type ? ` · ${c.type}` : ''}</p>
+												{#if c.address}<p class="text-sm text-slate-400 truncate">{c.address}</p>{/if}
 											</div>
 										</button>
 									{/each}
 									<button type="button" onmousedown={enterManually}
-										class="w-full text-left px-4 py-3 flex items-center gap-2 bg-slate-50 hover:bg-slate-100 border-t border-slate-200 transition-colors">
-										<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536M9 13l6-6m-6 6H6v-3l9-9a2 2 0 012.828 0l.708.708A2 2 0 0118 7.172L9 16z"/></svg>
-										<span class="text-sm text-slate-600 font-medium">Not found — enter manually</span>
+										class="w-full text-left px-5 py-4 flex items-center gap-2 bg-slate-50 hover:bg-slate-100 border-t border-slate-200 transition-colors">
+										<svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536M9 13l6-6m-6 6H6v-3l9-9a2 2 0 012.828 0l.708.708A2 2 0 0118 7.172L9 16z"/></svg>
+										<span class="text-base text-slate-600 font-medium">Not found — enter manually</span>
 									</button>
 								</div>
 							{/if}
 						{/if}
 
 						{#if selectedCompany}
-							<div class="px-4 py-2.5 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center gap-2 text-sm">
-								<svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-								<span class="font-semibold text-emerald-800">{selectedCompany.name}</span>
-								{#if selectedCompany.regNo}<span class="text-emerald-600 text-[11px]">· {selectedCompany.regNo}</span>{/if}
+							<div class="px-5 py-3.5 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center gap-3">
+								<svg class="w-5 h-5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+								<span class="font-semibold text-emerald-800 text-base">{selectedCompany.name}</span>
+								{#if selectedCompany.regNo}<span class="text-emerald-600 text-sm">· {selectedCompany.regNo}</span>{/if}
 								<button type="button" onclick={() => { selectedCompany = null; companySearch = ''; form.company_name = ''; form.company_reg_no = ''; form.trading_address = ''; manualEntry = false; searchResults = []; }}
-									class="ml-auto text-emerald-600 hover:text-emerald-800 text-[11px] font-semibold">Clear</button>
+									class="ml-auto text-emerald-600 hover:text-emerald-800 text-sm font-semibold">Clear</button>
 							</div>
 						{/if}
 					</div>
@@ -392,8 +393,8 @@
 					</div>
 
 					<div class="pt-2 flex justify-end">
-						<button onclick={() => activeTab = 'email'}
-							class="h-10 px-6 rounded-lg bg-[#1e3a8a] hover:bg-[#1e40af] text-white text-sm font-semibold transition-colors">
+						<button onclick={() => activeTab = 'email'} disabled={!companyReady}
+							class="h-10 px-6 rounded-lg text-sm font-semibold transition-colors {companyReady ? 'bg-[#1e3a8a] hover:bg-[#1e40af] text-white' : 'bg-slate-100 text-slate-400 cursor-not-allowed'}">
 							Next: Edit Email →
 						</button>
 					</div>
