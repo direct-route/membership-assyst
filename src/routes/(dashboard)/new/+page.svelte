@@ -183,7 +183,7 @@
 	onDestroy(() => editor?.destroy());
 
 	// ── Email view toggle ───────────────────────────────────────────
-	let emailView = $state('edit'); // 'edit' | 'preview'
+	let emailView = $state('preview'); // 'edit' | 'preview'
 
 	let editorHtml = $state(DEFAULT_EMAIL_HTML);
 

@@ -455,7 +455,7 @@
 				</div>
 				<div class="p-6 space-y-5">
 					<iframe
-						src="https://www.aadrc.co.uk/terms.pdf"
+						src="https://www.membershipassyst.co.uk/terms.pdf"
 						title="Terms & Conditions"
 						class="w-full rounded-lg border border-slate-200"
 						style="height: 420px;"
