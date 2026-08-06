@@ -1,4 +1,4 @@
-<script>
+﻿<script>
 	import { enhance } from '$app/forms';
 	import { pbFileUrl } from '$lib/pbUtils.js';
 	let { data } = $props();
@@ -311,10 +311,10 @@
 							<div>
 								<div class="flex items-center justify-between mb-1">
 									<label for="apply-trading-address" class="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">Trading Address *</label>
-									<button type="button" onclick={() => form.registered_address = form.trading_address}
+									<button type="button" onclick={() => form.trading_address = form.registered_address}
 										class="inline-flex items-center gap-1 text-[11px] font-semibold text-[#1e3a8a] hover:text-[#1e40af] border border-[#1e3a8a]/30 hover:border-[#1e3a8a] px-2 py-0.5 rounded-md transition-colors">
 										<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-										Copy to registered address
+										Copy from registered address
 									</button>
 								</div>
 								<textarea id="apply-trading-address" bind:value={form.trading_address} rows="2" onblur={() => touch('trading_address')} class="{fieldCls('trading_address')} resize-none"></textarea>
