@@ -139,7 +139,7 @@
 	let editorEl = $state(null);
 	let editor = $state(null);
 
-	const DEFAULT_EMAIL_HTML = `<p>Dear {{contact_name}},</p><p>You have been invited to apply for membership with Direct Route Collections Limited. Please click the link below to begin your application:</p><p><a href="{{apply_url}}">Begin Application</a></p><p>Kindly note that all debt instructions submitted are subject to our <a href="/terms.pdf">Terms &amp; Conditions</a>.</p><p>We very much look forward to hearing from you.</p>`;
+	const DEFAULT_EMAIL_HTML = `<p>Dear {{contact_name}},</p><p>You have been invited to apply for membership with Direct Route Collections Limited. Please click the link below to begin your application:</p><p><a href="{{apply_url}}">Begin Application</a></p><p>Kindly note that all debt instructions submitted are subject to our <a href="https://www.membershipassyst.co.uk/terms.pdf">Terms &amp; Conditions</a>.</p><p>We very much look forward to hearing from you.</p>`;
 
 	$effect(() => {
 		const el = editorEl;

@@ -6,6 +6,11 @@ const PUBLIC_ROUTES = ['/', '/signin', '/apply', '/signout'];
 const COOKIE_OPTS = { path: '/', httpOnly: true, secure: true, sameSite: 'Lax', maxAge: 60 * 60 * 24 * 30 };
 
 export async function handle({ event, resolve }) {
+	const host = event.request.headers.get('host') ?? '';
+	if (host === 'membershipassyst.co.uk') {
+		throw redirect(301, `https://www.membershipassyst.co.uk${event.url.pathname}${event.url.search}`);
+	}
+
 	const pb = new PocketBase(PUBLIC_POCKETBASE_URL);
 	pb.autoCancellation(false);
 	event.locals.pb = pb;

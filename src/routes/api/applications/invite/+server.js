@@ -48,7 +48,8 @@ export async function POST({ request, locals }) {
 	const licenseeName = user.licensee_name || user.name || user.email;
 
 	const resolvedBody = (email_body || `<p>Dear {{contact_name}},</p><p>You have been invited to apply for membership. Please click the button below to begin:</p><p style="text-align:center;margin:24px 0"><a href="{{apply_url}}" style="display:inline-block;background:#1e3a8a;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px">Begin Application →</a></p><p style="color:#64748b;font-size:13px">If the button doesn't work, copy and paste this link:<br><a href="{{apply_url}}" style="color:#1e3a8a;word-break:break-all">{{apply_url}}</a></p>`)
-		.replace(/href="\/terms\.pdf"/g, 'href="https://www.aadrc.co.uk/terms.pdf"')
+		.replace(/href="\/terms\.pdf"/g, 'href="https://www.membershipassyst.co.uk/terms.pdf"')
+		.replace(/href="https:\/\/www\.aadrc\.co\.uk\/terms\.pdf"/g, 'href="https://www.membershipassyst.co.uk/terms.pdf"')
 		.replace(/\{\{apply_url\}\}/g, applyUrl)
 		.replace(/\{\{contact_name\}\}/g, contact_name)
 		.replace(/\{\{licensee_name\}\}/g, licenseeName)
