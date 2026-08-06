@@ -124,7 +124,7 @@ export const actions = {
 							</tr>
 						</table>
 						<p style="margin:0 0 24px;text-align:center">
-							<a href="https://www.aadrc.co.uk/applications" style="display:inline-block;background:#7c3aed;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px">Review Application →</a>
+							<a href="https://www.membershipassyst.co.uk/applications" style="display:inline-block;background:#7c3aed;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px">Review Application →</a>
 						</p>
 					`
 				}),
